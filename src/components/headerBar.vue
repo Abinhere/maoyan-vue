@@ -6,7 +6,7 @@
             猫眼电影
         </h1>
         <div class="nav">
-            <span @click="showNav=!showNav">...</span>
+            <span @click.stop="SET_SHOW_NAV(!showNav)">...</span>
             <ul v-if="showNav">
                 <li @click="go('/index/movie/hotshowing')">
                     电影
@@ -23,13 +23,17 @@
 </template>
 
 <script>
+import {mapMutations, mapState} from 'vuex'
 export default {
     data(){
         return{
-            showNav:false
         }
     },
+    computed:{
+        ...mapState(['showNav'])
+    },
     methods:{
+        ...mapMutations(['SET_SHOW_NAV']),
         go(url){
             this.$router.push(url)
             this.showNav = !this.showNav

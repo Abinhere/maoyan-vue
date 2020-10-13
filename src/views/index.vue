@@ -1,5 +1,5 @@
 <template>
-    <div class="index-container">
+    <div class="index-container" @click="SET_SHOW_NAV(!showNav)">
         <HeaderBar></HeaderBar>
         <main>
             <router-view></router-view>
@@ -17,9 +17,17 @@
 <script>
 import "../assets/style/common.css"
 import HeaderBar from '../components/headerBar'
+import {mapMutations, mapState} from 'vuex'
+
 export default {
     components:{
         HeaderBar
+    },
+    computed:{
+        ...mapState(['showNav'])
+    },
+    methods:{
+        ...mapMutations(['SET_SHOW_NAV']),
     }
 }
 </script>

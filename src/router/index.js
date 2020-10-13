@@ -26,7 +26,7 @@ const routes = [
     children:[
       // 电影
       {
-        path:'/index/movie',//绝对路径
+        path:'/index/movie',//绝对路径 或相对路径都行
         component:Movie,
         redirect:"/index/movie/hotshowing",
         children:[
