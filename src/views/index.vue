@@ -1,6 +1,6 @@
 <template>
     <div class="index-container">
-        <header></header>
+        <HeaderBar></HeaderBar>
         <main>
             <router-view></router-view>
         </main>
@@ -16,8 +16,11 @@
 
 <script>
 import "../assets/style/common.css"
+import HeaderBar from '../components/headerBar'
 export default {
-    
+    components:{
+        HeaderBar
+    }
 }
 </script>
 
@@ -27,10 +30,6 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    header{
-        height: 50px;
-        background: #e54847;
-    }
     main{
         flex: 1;
     }
