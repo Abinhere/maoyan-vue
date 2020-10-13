@@ -9,6 +9,11 @@ import Hotshowing from '../views/movie/hotshowing.vue'
 import Comingsoon from '../views/movie/comingsoon.vue'
 Vue.use(VueRouter)
 
+const originVueRouter = VueRouter.prototype.push;
+VueRouter.prototype.push = function (location,onComplete,onAbort){
+  return originVueRouter.call(this,location,()=>{})
+}
+
 const routes = [
   {
     path:'/',

@@ -8,13 +8,13 @@
         <div class="nav">
             <span @click="showNav=!showNav">...</span>
             <ul v-if="showNav">
-                <li>
+                <li @click="go('/index/movie/hotshowing')">
                     电影
                 </li>
-                <li>
+                <li @click="go('/index/theater')">
                     影院
                 </li>
-                <li>
+                <li @click="go('/index/profile')">
                     我的
                 </li>
             </ul>
@@ -27,6 +27,12 @@ export default {
     data(){
         return{
             showNav:false
+        }
+    },
+    methods:{
+        go(url){
+            this.$router.push(url)
+            this.showNav = !this.showNav
         }
     }
 }
