@@ -17,17 +17,17 @@
 <script>
 import "../assets/style/common.css"
 import HeaderBar from '../components/headerBar'
-import {mapMutations, mapState} from 'vuex'
+import { mapState,mapMutations} from 'vuex'
 
 export default {
     components:{
         HeaderBar
     },
     computed:{
-        ...mapState(['showNav'])
+        ...mapState(["showNav"])
     },
     methods:{
-        ...mapMutations(['SET_SHOW_NAV']),
+        ...mapMutations(["SET_SHOW_NAV"])
     }
 }
 </script>

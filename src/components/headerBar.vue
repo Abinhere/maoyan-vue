@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {mapMutations, mapState} from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 export default {
     data(){
         return{
