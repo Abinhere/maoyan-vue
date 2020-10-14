@@ -5,8 +5,8 @@ import City from '../views/city.vue'
 import Movie from '../views/movie/movie.vue'
 import Theater from '../views/theater/theater.vue'
 import Profile from '../views/profile/profile.vue'
-import Hotshowing from '../views/movie/hotshowing.vue'
-import Comingsoon from '../views/movie/comingsoon.vue'
+import Hotshowing from 'views/movie/components/hotshowing.vue'
+import Comingsoon from 'views/movie/components/comingsoon.vue'
 Vue.use(VueRouter)
 
 const originVueRouter = VueRouter.prototype.push;
@@ -17,7 +17,7 @@ VueRouter.prototype.push = function (location,onComplete,onAbort){
 const routes = [
   {
     path:'/',
-    redirect:"/index/movie/hotshowing"
+    redirect:"/index/movie/components/hotshowing"
   },
   {
     path: '/index',
@@ -26,9 +26,9 @@ const routes = [
     children:[
       // 电影
       {
-        path:'/index/movie',//绝对路径 或相对路径都行
+        path:'/index/movie/components',//绝对路径 或相对路径都行
         component:Movie,
-        redirect:"/index/movie/hotshowing",
+        redirect:"/index/movie/components/hotshowing",
         children:[
           {
             path:'hotshowing',//相对路径 等于 /index/movie/hotshowing

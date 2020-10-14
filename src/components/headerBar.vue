@@ -8,7 +8,7 @@
         <div class="nav">
             <span @click.stop="SET_SHOW_NAV(!showNav)">...</span>
             <ul v-if="showNav">
-                <li @click="go('/index/movie/hotshowing')">
+                <li @click="go('/index/movie/components/hotshowing')">
                     电影
                 </li>
                 <li @click="go('/index/theater')">
@@ -30,13 +30,13 @@ export default {
         }
     },
     computed:{
-        ...mapState(['showNav'])
+        ...mapState(["showNav"]),
     },
     methods:{
-        ...mapMutations(['SET_SHOW_NAV']),
+        ...mapMutations(["SET_SHOW_NAV"]),
         go(url){
             this.$router.push(url)
-            this.showNav = !this.showNav
+            this.SET_SHOW_NAV(!this.showNav)
         }
     }
 }
@@ -64,6 +64,7 @@ export default {
             position: relative;
             ul{
                 position: absolute;
+                z-index: 1;
                 top: 50px;
                 right: 0px;
                 background: white;

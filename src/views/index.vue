@@ -1,5 +1,5 @@
 <template>
-    <div class="index-container" @click="SET_SHOW_NAV(!showNav)">
+    <div class="index-container" @click="SET_SHOW_NAV(false)">
         <HeaderBar></HeaderBar>
         <main>
             <router-view></router-view>

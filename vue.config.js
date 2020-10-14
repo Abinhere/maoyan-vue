@@ -1,4 +1,5 @@
 const pxtovw = require('postcss-px-to-viewport')
+const path = require('path')
 module.exports = {
     css:{
         loaderOptions:{
@@ -24,5 +25,10 @@ module.exports = {
                 ]
             }
         }
+    },
+    chainWebpack:config=>{
+        config.resolve.alias.set('assets',path.resolve(__dirname,'./src/assets/'))
+        config.resolve.alias.set('views',path.resolve(__dirname,'./src/views/'))
     }
+    
 }

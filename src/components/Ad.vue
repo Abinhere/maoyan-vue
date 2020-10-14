@@ -33,16 +33,20 @@
             color: #222;
             font-weight: 300;
         }
+        span{
+            font-size: 13px;
+            color: #ccc;
+        }
     }
     .btn-wrapper{
         flex-basis: 75px;
         button{
-            line-height: 27px;
+            line-height: 25px;
             background: #f03d37;
             border-radius: 6px;
             text-align: center;
             color: white;
-            width: 68px;
+            width: 70px;
         }
     }
 }
